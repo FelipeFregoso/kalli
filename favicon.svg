@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#1e3029"/>
-  <path d="M17 47V17h7v12.3L38.6 17H48L31.9 32 49 47h-9.7L24 34.8V47z" fill="#eee8dc"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kalli">
+  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+  <path d="M15 47V27m5 20V21m5 26V16m5 31V25m5 22V29m5 18V33m5 14V37" fill="none" stroke="#55bbc2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 47V26m7 21V33" fill="none" stroke="#10255c" stroke-width="3" stroke-linecap="round"/>
+  <path d="M9 53 27 47l19 6" fill="none" stroke="#10255c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

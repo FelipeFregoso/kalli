@@ -46,6 +46,9 @@ jobs:
             **/.env
             **/.env.*
             README.md
+            README-Fase-2.md
+            INSTRUCCIONES-DEPLOY.md
+            deploy-test.txt
             .DS_Store
 
           log-level: standard

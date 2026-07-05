@@ -73,59 +73,70 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1e3029">
-  <title>Agenda una visita | Kalli</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#10255c">
+  <meta name="description" content="Agenda una asesoría con Kalli Inmobiliaria & Arquitectura.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Agenda una asesoría | Kalli</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .contact-page { min-height: 100vh; padding: 7.75rem 0 4rem; background: var(--ivory-100); }
-    .contact-page__wrap { display: grid; grid-template-columns: .86fr 1.14fr; gap: clamp(2rem, 7vw, 6rem); align-items: start; }
-    .contact-page__aside { padding-top: 1rem; }
-    .contact-page__title { max-width: 540px; margin: 0; color: var(--forest-900); font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5.6rem); font-weight: 600; line-height: .9; letter-spacing: -.05em; }
-    .contact-page__copy { max-width: 420px; margin-top: 1.5rem; color: #59635b; }
-    .contact-card { padding: clamp(1.35rem, 3vw, 2.5rem); background: var(--white); border: 1px solid rgba(111,122,89,.18); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
-    .contact-card__label { margin: 0 0 .45rem; color: var(--olive-600); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    .contact-card h2 { margin: 0 0 1.8rem; color: var(--forest-900); font-family: var(--font-display); font-size: 2.1rem; font-weight: 600; line-height: 1; }
+    .contact-page { min-height: 100vh; padding: 9.5rem 0 5rem; background: linear-gradient(135deg, var(--mist), var(--sky-100)); }
+    .contact-page__wrap { display: grid; grid-template-columns: minmax(0,.88fr) minmax(0,1.12fr); gap: clamp(2rem, 8vw, 7rem); align-items: start; }
+    .contact-page__aside { padding-top: clamp(.5rem, 3vw, 2rem); }
+    .contact-page__title { max-width: 610px; margin: 0; color: var(--navy-900); font-family: var(--font-display); font-size: clamp(3.5rem, 6.8vw, 6.6rem); font-weight: 400; letter-spacing: -.055em; line-height: .9; }
+    .contact-page__copy { max-width: 460px; margin: 1.55rem 0 0; color: var(--slate); font-size: 1rem; line-height: 1.8; }
+    .contact-page__notes { display: grid; gap: .8rem; margin: 2.4rem 0 0; padding: 0; list-style: none; color: var(--navy-800); font-size: .72rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .contact-page__notes li { display: flex; gap: .65rem; align-items: center; }
+    .contact-page__notes span { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-500); }
+    .contact-card { padding: clamp(1.4rem, 3vw, 2.7rem); background: var(--paper); border: 1px solid rgba(16,37,92,.1); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+    .contact-card__label { margin: 0 0 .55rem; color: var(--blue-700); font-size: .7rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .contact-card h2 { margin: 0 0 1.9rem; color: var(--navy-900); font-family: var(--font-display); font-size: 2.4rem; font-weight: 400; letter-spacing: -.035em; line-height: 1; }
     .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .form-field { display: grid; gap: .5rem; }
     .form-field--full { grid-column: 1 / -1; }
-    .form-field label { color: var(--forest-900); font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .form-field input, .form-field select, .form-field textarea { width: 100%; padding: .9rem 1rem; color: var(--charcoal-900); background: var(--ivory-100); border: 1px solid rgba(111,122,89,.24); border-radius: .6rem; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
-    .form-field textarea { min-height: 130px; resize: vertical; }
-    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--olive-600); box-shadow: 0 0 0 3px rgba(111,122,89,.14); }
-    .form-notice { margin: 0 0 1.25rem; padding: .9rem 1rem; border-radius: .6rem; font-size: .86rem; }
-    .form-notice--success { color: #17492e; background: #dfeee4; }
-    .form-notice--error { color: #6d2e2d; background: #f4e3e0; }
+    .form-field label { color: var(--navy-900); font-size: .68rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; padding: .95rem 1rem; color: var(--ink); background: #f8fcfc; border: 1px solid rgba(16,37,92,.16); border-radius: .72rem; outline: none; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; }
+    .form-field textarea { min-height: 140px; resize: vertical; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { background: var(--paper); border-color: var(--teal-500); box-shadow: 0 0 0 4px rgba(85,187,194,.16); }
+    .form-notice { margin: 0 0 1.3rem; padding: .95rem 1rem; border-radius: .72rem; font-size: .88rem; }
+    .form-notice--success { color: #0f5b52; background: #def3ef; }
+    .form-notice--error { color: #8b2f38; background: #fbe8ea; }
     .form-hp { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
-    .contact-page .button--primary { margin-top: 1.4rem; color: var(--ivory-100); background: var(--forest-900); }
-    .contact-page .button--primary:hover { background: var(--forest-800); }
-    .contact-page__back { display: inline-flex; gap: .55rem; align-items: center; margin-top: 2rem; color: var(--forest-900); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-    @media (max-width: 800px) { .contact-page__wrap { grid-template-columns: 1fr; gap: 2rem; } .contact-page__aside { padding-top: 0; } }
-    @media (max-width: 520px) { .contact-page { padding-top: 6.3rem; } .form-grid { grid-template-columns: 1fr; } .form-field--full { grid-column: auto; } }
+    .contact-card .button--primary { margin-top: 1.5rem; }
+    .contact-page__back { display: inline-flex; gap: .55rem; align-items: center; margin-top: 2.3rem; color: var(--navy-900); font-size: .7rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .contact-page__back span { font-size: 1rem; transition: transform .2s ease; }
+    .contact-page__back:hover span { transform: translateX(-3px); }
+    .contact-header { position: fixed; z-index: 100; inset: 0 0 auto; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); box-shadow: 0 8px 28px rgba(16,37,92,.06); }
+    .contact-header__inner { display: flex; justify-content: space-between; gap: 1rem; align-items: center; min-height: 84px; }
+    .contact-header .brand { width: 165px; }
+    @media (max-width: 800px) { .contact-page { padding-top: 7.8rem; } .contact-page__wrap { grid-template-columns: 1fr; gap: 2.3rem; } .contact-page__aside { padding-top: 0; } }
+    @media (max-width: 520px) { .contact-header__inner { min-height: 73px; } .contact-header .brand { width: 128px; } .contact-header .button { min-height: 39px; padding: .64rem .76rem; font-size: .56rem; } .contact-page { padding-top: 6.7rem; } .form-grid { grid-template-columns: 1fr; } .form-field--full { grid-column: auto; } .contact-card { border-radius: var(--radius); } }
   </style>
 </head>
 <body>
-  <header class="site-header is-scrolled">
-    <div class="site-header__inner container">
-      <a class="brand" href="index.html#inicio" aria-label="Kalli, volver al inicio"><img src="img/logo/kalli-logo-light.svg" width="126" height="50" alt="Kalli"></a>
-      <div></div>
-      <a class="button button--outline" href="index.html#inicio">Volver al inicio</a>
+  <header class="contact-header">
+    <div class="container contact-header__inner">
+      <a class="brand" href="index.html#inicio" aria-label="Kalli, volver al inicio"><img src="img/logo/kalli-logo-official.png" width="927" height="510" alt="Kalli Inmobiliaria & Arquitectura"></a>
+      <a class="button button--small button--nav" href="index.html#inicio">Volver al inicio <span aria-hidden="true">↖</span></a>
     </div>
   </header>
   <main class="contact-page">
     <div class="container contact-page__wrap">
       <section class="contact-page__aside" aria-labelledby="contact-title">
-        <p class="eyebrow" style="color: var(--olive-600);"><span style="background: var(--gold-500);"></span>Conoce Kalli</p>
-        <h1 class="contact-page__title" id="contact-title">El primer paso hacia tu próximo hogar.</h1>
-        <p class="contact-page__copy">Compártenos tus datos y un asesor podrá brindarte información sobre Kalli, disponibilidad y el proceso para agendar una visita.</p>
+        <p class="section-kicker">Conversemos</p>
+        <h1 class="contact-page__title" id="contact-title">Tu siguiente espacio puede empezar hoy.</h1>
+        <p class="contact-page__copy">Compártenos qué tienes en mente. Un asesor de Kalli podrá orientarte sobre opciones, proyectos y los siguientes pasos para llevar tu visión a algo real.</p>
+        <ul class="contact-page__notes" aria-label="Beneficios de la asesoría"><li><span aria-hidden="true"></span>Atención personalizada</li><li><span aria-hidden="true"></span>Una conversación clara y sin compromiso</li><li><span aria-hidden="true"></span>Inmobiliaria & Arquitectura</li></ul>
         <a class="contact-page__back" href="index.html#inicio"><span aria-hidden="true">←</span> Volver al inicio</a>
       </section>
       <section class="contact-card" aria-labelledby="form-title">
-        <p class="contact-card__label">Agenda una visita</p>
-        <h2 id="form-title">Hablemos de tu siguiente etapa.</h2>
+        <p class="contact-card__label">Agenda una asesoría</p>
+        <h2 id="form-title">Hablemos de lo que imaginas.</h2>
         <?php if ($success): ?>
           <p class="form-notice form-notice--success" role="status">Gracias. Recibimos tu solicitud y nos pondremos en contacto contigo pronto.</p>
         <?php elseif ($error): ?>
@@ -138,8 +149,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-field"><label for="name">Nombre *</label><input id="name" name="name" type="text" maxlength="100" autocomplete="name" required value="<?= htmlspecialchars($values['name'], ENT_QUOTES, 'UTF-8') ?>"></div>
             <div class="form-field"><label for="phone">Teléfono</label><input id="phone" name="phone" type="tel" maxlength="24" autocomplete="tel" value="<?= htmlspecialchars($values['phone'], ENT_QUOTES, 'UTF-8') ?>"></div>
             <div class="form-field form-field--full"><label for="email">Correo electrónico *</label><input id="email" name="email" type="email" maxlength="150" autocomplete="email" required value="<?= htmlspecialchars($values['email'], ENT_QUOTES, 'UTF-8') ?>"></div>
-            <div class="form-field form-field--full"><label for="interest">Me interesa *</label><select id="interest" name="interest" required><option value="">Selecciona una opción</option><?php foreach (['Conocer el desarrollo', 'Agendar una visita', 'Disponibilidad', 'Inversión', 'Otro'] as $option): ?><option value="<?= htmlspecialchars($option, ENT_QUOTES, 'UTF-8') ?>"<?= $values['interest'] === $option ? ' selected' : '' ?>><?= htmlspecialchars($option, ENT_QUOTES, 'UTF-8') ?></option><?php endforeach; ?></select></div>
-            <div class="form-field form-field--full"><label for="message">Mensaje</label><textarea id="message" name="message" maxlength="1000" placeholder="Cuéntanos qué información te gustaría recibir."><?= htmlspecialchars($values['message'], ENT_QUOTES, 'UTF-8') ?></textarea></div>
+            <div class="form-field form-field--full"><label for="interest">Me interesa *</label><select id="interest" name="interest" required><option value="">Selecciona una opción</option><?php foreach (['Conocer opciones inmobiliarias', 'Iniciar un proyecto arquitectónico', 'Explorar una inversión', 'Agendar una asesoría', 'Otro'] as $option): ?><option value="<?= htmlspecialchars($option, ENT_QUOTES, 'UTF-8') ?>"<?= $values['interest'] === $option ? ' selected' : '' ?>><?= htmlspecialchars($option, ENT_QUOTES, 'UTF-8') ?></option><?php endforeach; ?></select></div>
+            <div class="form-field form-field--full"><label for="message">Cuéntanos un poco más</label><textarea id="message" name="message" maxlength="1000" placeholder="¿Qué tipo de espacio, proyecto u oportunidad estás buscando?"><?= htmlspecialchars($values['message'], ENT_QUOTES, 'UTF-8') ?></textarea></div>
           </div>
           <button class="button button--primary" type="submit">Enviar solicitud <span aria-hidden="true">↗</span></button>
         </form>
