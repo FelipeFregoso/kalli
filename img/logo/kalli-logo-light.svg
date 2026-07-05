@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 86" role="img" aria-label="Kalli">
+  <g fill="#f9f7f1">
+    <path d="M7 68V16h9v22.1L39.5 16H52L27.6 41.3 53.3 68H40.5L16 43.5V68z"/>
+    <path d="M67 67.8V16h9.1v51.8z"/>
+    <path d="M94 67.8V16h9.1v51.8z"/>
+    <path d="M121 67.8V16h9.1v51.8z"/>
+    <path d="M160.6 68.9c-14.8 0-25.5-10.9-25.5-27s10.8-27 25.5-27c14.9 0 25.6 10.9 25.6 27s-10.7 27-25.6 27zm0-8.7c9.5 0 16.2-7.2 16.2-18.3s-6.7-18.4-16.2-18.4-16.2 7.2-16.2 18.4 6.7 18.3 16.2 18.3z"/>
+  </g>
+  <text x="110" y="82" text-anchor="middle" fill="#d6c6a8" font-family="Arial, sans-serif" font-size="8" letter-spacing="4.6">RESIDENCIAL</text>
+</svg>

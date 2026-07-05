@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e3029">
+  <meta name="description" content="Kalli es un desarrollo residencial contemporáneo pensado para vivir con calma, naturaleza y visión de futuro.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://kalli.mayartestudio.com/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Kalli">
+  <meta property="og:title" content="Kalli | Vive con calma. Invierte con visión.">
+  <meta property="og:description" content="Un desarrollo residencial contemporáneo donde arquitectura, naturaleza y bienestar se encuentran.">
+  <meta property="og:url" content="https://kalli.mayartestudio.com/">
+  <meta property="og:image" content="https://kalli.mayartestudio.com/img/hero/kalli-hero-desktop.svg">
+  <title>Kalli | Vive con calma. Invierte con visión.</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header" data-header>
+    <div class="site-header__inner container">
+      <a class="brand" href="#inicio" aria-label="Kalli, volver al inicio">
+        <img src="img/logo/kalli-logo-light.svg" width="126" height="50" alt="Kalli">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a class="nav-link is-active" href="#inicio" aria-current="page">Inicio</a>
+        <a class="nav-link" href="#concepto" data-phase-link>Concepto</a>
+        <a class="nav-link" href="#amenidades" data-phase-link>Amenidades</a>
+        <a class="nav-link" href="#masterplan" data-phase-link>Master Plan</a>
+        <a class="nav-link" href="#galeria" data-phase-link>Galería</a>
+        <a class="nav-link" href="#ubicacion" data-phase-link>Ubicación</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="button button--small button--outline" href="contact.php">Agenda una visita <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false" data-menu-toggle>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+      <nav class="mobile-menu__nav" aria-label="Navegación móvil">
+        <a href="#inicio" data-mobile-link>Inicio</a>
+        <a href="#concepto" data-phase-link data-mobile-link>Concepto</a>
+        <a href="#amenidades" data-phase-link data-mobile-link>Amenidades</a>
+        <a href="#masterplan" data-phase-link data-mobile-link>Master Plan</a>
+        <a href="#galeria" data-phase-link data-mobile-link>Galería</a>
+        <a href="#ubicacion" data-phase-link data-mobile-link>Ubicación</a>
+        <a class="button button--primary button--mobile" href="contact.php">Agenda una visita <span aria-hidden="true">↗</span></a>
+      </nav>
+      <p class="mobile-menu__note">Residencial contemporáneo · Próximamente</p>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <picture class="hero__media" aria-hidden="true">
+        <source media="(max-width: 720px)" srcset="img/hero/kalli-hero-mobile.svg">
+        <img src="img/hero/kalli-hero-desktop.svg" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+      </picture>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="eyebrow hero-animate" data-hero-item>Residencial contemporáneo</p>
+        <h1 class="hero__title hero-animate" id="hero-title" data-hero-item>
+          Vive con calma.<br>
+          <em>Invierte con visión.</em>
+        </h1>
+        <p class="hero__description hero-animate" data-hero-item>
+          Kalli reúne arquitectura esencial, privacidad y naturaleza para crear una forma más serena de habitar.
+        </p>
+        <div class="hero__actions hero-animate" data-hero-item>
+          <a class="button button--primary" href="contact.php">Agenda una visita <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#concepto" data-phase-link>Descubre Kalli <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <div class="hero__footer container" aria-label="Información destacada">
+        <div class="hero__signature hero-animate" data-hero-item>
+          <span class="hero__signature-line" aria-hidden="true"></span>
+          <span>Diseñado para tu siguiente etapa</span>
+        </div>
+        <a class="scroll-indicator hero-animate" href="#concepto" data-phase-link aria-label="Conocer más sobre Kalli" data-hero-item>
+          <span>Explora</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Las siguientes anclas activarán las secciones completas durante la Fase 3. -->
+    <div class="phase-anchors" aria-hidden="true">
+      <span id="concepto"></span>
+      <span id="amenidades"></span>
+      <span id="masterplan"></span>
+      <span id="galeria"></span>
+      <span id="ubicacion"></span>
+    </div>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true" data-toast></div>
+
+  <noscript>
+    <div class="noscript-message">Para disfrutar de todas las interacciones de Kalli, activa JavaScript en tu navegador.</div>
+  </noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
